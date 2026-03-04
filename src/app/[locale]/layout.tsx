@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     title: 'Emir Cem Ateş — Full-stack Developer',
     description:
         'Portfolio of Emir Cem Ateş. Full-stack developer passionate about performance, clean architecture, and great user experiences.',
+    icons: {
+        icon: [
+            { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        ],
+    },
 };
 
 export default async function LocaleLayout({

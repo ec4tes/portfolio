@@ -44,7 +44,7 @@ export default function Navbar() {
                     className="text-lg font-bold tracking-tight hover:text-[var(--color-cyan)]"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                    <span className="gradient-text font-black">ECA</span>
+                    <span className="gradient-text font-black"> &gt; ecates</span>
                 </MagneticLink>
 
                 {/* Nav links (hidden on small screens) */}
