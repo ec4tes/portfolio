@@ -1,0 +1,65 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+interface ExperienceItem {
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+    bullets: string[];
+}
+
+interface ExperienceTimelineProps {
+    items: ExperienceItem[];
+}
+
+export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
+    return (
+        <div className="relative">
+            {/* Vertical accent line */}
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--color-cyan)]/40 via-[var(--color-purple)]/30 to-transparent" />
+
+            <div className="space-y-6">
+                {items.map((item, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: '-50px' }}
+                        transition={{ duration: 0.5, delay: i * 0.15 }}
+                        className="relative pl-10"
+                    >
+                        {/* Dot on timeline */}
+                        <div className="absolute left-[11px] top-2 h-3 w-3 rounded-full border-2 border-[var(--color-cyan)] bg-[var(--color-bg)]" />
+
+                        {/* Card */}
+                        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 transition-all hover:border-[var(--color-purple)]/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.08)]">
+                            {/* Track header */}
+                            <div className="flex items-center justify-between gap-4 flex-wrap">
+                                <div>
+                                    <h3 className="font-bold text-[var(--color-fg)]">{item.role}</h3>
+                                    <p className="text-sm text-[var(--color-cyan)]">{item.company}</p>
+                                </div>
+                                <span className="whitespace-nowrap rounded-full bg-[var(--color-card)] border border-[var(--color-border)] px-3 py-1 font-[family-name:var(--font-mono)] text-xs text-[var(--color-muted)]">
+                                    {item.period}
+                                </span>
+                            </div>
+
+                            <p className="mt-2 text-sm text-[var(--color-muted)]">{item.description}</p>
+
+                            <ul className="mt-3 space-y-1">
+                                {item.bullets.map((b, j) => (
+                                    <li key={j} className="flex items-start gap-2 text-sm text-[var(--color-muted)]">
+                                        <span className="mt-1.5 text-[var(--color-purple)]">▸</span>
+                                        {b}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    );
+}

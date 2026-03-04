@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "projects": "Projects",
+    "experience": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "roles": [
+      "Full-stack Developer",
+      "Product-minded",
+      "Performance-driven"
+    ],
+    "scrollCta": "Scroll to explore"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "In short: I'm a person who talks to computers — and sometimes they actually listen. As a full-stack developer, I obsess over pixels on the frontend and fight with databases on the backend. Sometimes I win, sometimes ChatGPT wins.",
+    "p2": "When I'm not coding, I'm chasing new technologies, starting side projects and jumping to new ones before finishing half of them, or promising myself 'this time I'll actually finish it.' Spoiler: I don't. But at least I'm having fun.",
+    "locationLabel": "Based in",
+    "location": "Turkey, Ankara",
+    "focusLabel": "Focus",
+    "focus": "Full-stack"
+  },
+  "stack": {
+    "title": "My Inventory",
+    "subtitle": "Items collected on my coding adventure.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "devops": "DevOps & Cloud",
+      "tools": "Tools & More"
+    },
+    "frontendSkills": {
+      "react": "useEffect dependency arrays still give me nightmares.",
+      "nextjs": "Every new version = relearn the entire project.",
+      "typescript": "'any' is banned but sometimes... nevermind.",
+      "tailwind": "I know 'flex justify-center items-center' by heart.",
+      "framer": "The thing that made this site. Overkill? Maybe.",
+      "reactnative": "'Write once, run everywhere' they said. They lied."
+    },
+    "backendSkills": {
+      "nodejs": "Promoted from callback hell to async/await paradise.",
+      "python": "I admit I've lost 2 hours to an indent error.",
+      "postgresql": "Writing JOINs makes me feel like a hacker.",
+      "mongodb": "No schema sounded great... until it didn't.",
+      "java": "AbstractSingletonProxyFactoryBean... I'm used to it now.",
+      "springboot": "The art of coding through annotation stacking."
+    }
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "subtitle": "A few things I've built that I'm proud of.",
+    "items": [
+      {
+        "title": "Blockchain Document Verification",
+        "tagline": "Blockchain-based smart document verification and approval system",
+        "role": "Full-stack Developer",
+        "stack": "Ethereum · Solidity · Node.js · S3",
+        "impact": "Immutable verification",
+        "bullets": [
+          "Documents hashed with SHA-256, hashes registered on Ethereum blockchain",
+          "Files stored in S3-compatible off-chain storage",
+          "Built as a production-ready full-stack application from scratch"
+        ],
+        "link": "#",
+        "linkLabel": ""
+      },
+      {
+        "title": "AI CV Builder & Job Matcher",
+        "tagline": "AI-powered CV builder and job matching platform",
+        "role": "Full-stack Developer",
+        "stack": "Next.js · AI · Semantic Search",
+        "impact": "ATS-optimized CVs",
+        "bullets": [
+          "AI-powered semantic search matching job listings with CVs",
+          "Smart system automating ATS-compatible CV generation",
+          "Modern and fast user experience built with Next.js"
+        ],
+        "link": "#",
+        "linkLabel": ""
+      },
+      {
+        "title": "Restaurant Management System",
+        "tagline": "Order and management system I built from scratch for our family restaurant",
+        "role": "Solo Developer",
+        "stack": ".NET · WinForms · SQL",
+        "impact": "Actively in use",
+        "bullets": [
+          "Table-based order tracking, takeaway & delivery support, half-portion options",
+          "Daily/monthly sales reports, bulk price updates, receipt printing",
+          "Admin/Waiter roles with user management — ended my dad's Excel suffering"
+        ],
+        "link": "#",
+        "linkLabel": ""
+      }
+    ]
+  },
+  "experience": {
+    "title": "Education Journey",
+    "subtitle": "From there to here...",
+    "items": [
+      {
+        "role": "Computer Engineering",
+        "company": "İnönü University",
+        "period": "2022 — Present",
+        "description": "Learning algorithms, data structures, software engineering and a whole lot more — mostly on my own.",
+        "bullets": []
+      },
+      {
+        "role": "High School Graduate",
+        "company": "Mehmet Akif Ersoy Anatolian High School",
+        "period": "2018 — 2022",
+        "description": "Where it all started. My passion for computers took shape here.",
+        "bullets": []
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Say hi, I don't byte.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "socials": "Or find me here"
+  },
+  "footer": {
+    "copy": "© 2026 Emir Cem Ateş. Crafted with care."
+  }
+}

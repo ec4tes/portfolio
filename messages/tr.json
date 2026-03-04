@@ -1,0 +1,135 @@
+{
+    "nav": {
+        "about": "Hakkımda",
+        "stack": "Teknolojiler",
+        "projects": "Projeler",
+        "experience": "Eğitim",
+        "contact": "İletişim"
+    },
+    "hero": {
+        "greeting": "Merhaba, ben",
+        "roles": [
+            "Full-stack Geliştirici",
+            "Ürün Odaklı",
+            "Performans Takıntılı"
+        ],
+        "scrollCta": "Keşfetmek için kaydır"
+    },
+    "about": {
+        "title": "Hakkımda",
+        "p1": "Kısaca: bilgisayarla konuşan ve ara sıra bilgisayarın da beni dinlediği bir insanım. Full-stack geliştirici olarak hem ön yüzde piksel takıntısı yapıyor, hem arka planda veritabanlarıyla kavga ediyorum. Bazen kazanıyorum, bazen ChatGPT kazanıyor.",
+        "p2": "Kod yazmadığım zamanlarda yeni teknolojilerin peşinde koşuyor, yan projeler başlatıp yarısını bitirmeden yenisine atlıyor ya da 'bu sefer gerçekten bitireceğim' diye kendime söz veriyorum. Spoiler: vermiyorum. Ama en azından eğleniyorum.",
+        "locationLabel": "Konum",
+        "location": "Türkiye, Ankara",
+        "focusLabel": "Odak",
+        "focus": "Full-stack"
+    },
+    "stack": {
+        "title": "Envanterim",
+        "subtitle": "Yazılım macerasında topladığım eşyalar.",
+        "categories": {
+            "frontend": "Ön Yüz",
+            "backend": "Arka Yüz",
+            "devops": "DevOps & Bulut",
+            "tools": "Araçlar & Diğer"
+        },
+        "frontendSkills": {
+            "react": "useEffect dependency array'i hala bazen kabus gösteriyor.",
+            "nextjs": "Her yeni versiyon = tüm projeyi yeniden öğren.",
+            "typescript": "'any' yasak ama bazen... neyse.",
+            "tailwind": "className='flex justify-center items-center' ezbere biliyorum.",
+            "framer": "Bu siteyi yapan şey. Abartıldı mı biraz? Evet.",
+            "reactnative": "'Bir kere yaz her yerde çalışsın' dediler. Yalanmış."
+        },
+        "backendSkills": {
+            "nodejs": "callback hell'den async/await cennetine terfi ettim.",
+            "python": "indent hatası yüzünden 2 saat harcadığımı itiraf ediyorum.",
+            "postgresql": "JOIN yazarken kendimi hacker gibi hissediyorum.",
+            "mongodb": "Schema yok diye sevindim, sonra pişman oldum.",
+            "java": "AbstractSingletonProxyFactoryBean... alıştım artık.",
+            "springboot": "Annotation yığınıyla kod yazma sanatı."
+        }
+    },
+    "projects": {
+        "title": "Seçili Projeler",
+        "subtitle": "Gurur duyduğum birkaç çalışma.",
+        "items": [
+            {
+                "title": "Blockchain Doküman Doğrulama",
+                "tagline": "Blok zincir tabanlı akıllı doküman doğrulama ve onay sistemi",
+                "role": "Full-stack Geliştirici",
+                "stack": "Ethereum · Solidity · Node.js · S3",
+                "impact": "Değiştirilemez doğrulama",
+                "bullets": [
+                    "Dokümanlar SHA-256 ile hashleniyor, hash'ler Ethereum blok zincirine kaydediliyor",
+                    "Dosyalar S3 uyumlu off-chain depolamada saklanıyor",
+                    "Prod-ready full-stack uygulama olarak baştan sona geliştirildi"
+                ],
+                "link": "#",
+                "linkLabel": ""
+            },
+            {
+                "title": "AI CV Builder & İş Eşleştirici",
+                "tagline": "Yapay zeka destekli CV oluşturucu ve iş eşleştirme platformu",
+                "role": "Full-stack Geliştirici",
+                "stack": "Next.js · AI · Semantic Search",
+                "impact": "ATS-optimize CV'ler",
+                "bullets": [
+                    "AI destekli semantik arama ile iş ilanları ve CV eşleştirmesi",
+                    "ATS uyumlu CV oluşturmayı otomatikleştiren akıllı sistem",
+                    "Next.js ile modern ve hızlı kullanıcı deneyimi"
+                ],
+                "link": "#",
+                "linkLabel": ""
+            },
+            {
+                "title": "Restoran Otomasyon Sistemi",
+                "tagline": "Aile restoranmız için sıfırdan geliştirdiğim sipariş ve yönetim sistemi",
+                "role": "Solo Geliştirici",
+                "stack": ".NET · WinForms · SQL",
+                "impact": "Aktif kullanımda",
+                "bullets": [
+                    "Masa bazlı sipariş takibi, gel-al & paket desteği, yarım porsiyon seçeneği",
+                    "Günlük/aylık satış raporları, toplu fiyat güncelleme, fiş yazdırma",
+                    "Admin/Garson rolleri ile kullanıcı yönetimi — babamın Excel çilesine son verdi"
+                ],
+                "link": "#",
+                "linkLabel": ""
+            }
+        ]
+    },
+    "experience": {
+        "title": "Eğitim Yolculuğum",
+        "subtitle": "Nereden nereye...",
+        "items": [
+            {
+                "role": "Bilgisayar Mühendisliği",
+                "company": "İnönü Üniversitesi",
+                "period": "2022 — Devam ediyor",
+                "description": "Algoritma, veri yapıları, yazılım mühendisliği ve daha bir sürü şey öğreniyorum — çoğunu da kendi başıma.",
+                "bullets": []
+            },
+            {
+                "role": "Anadolu Lisesi Mezunu",
+                "company": "Mehmet Akif Ersoy Anadolu Lisesi",
+                "period": "2018 — 2022",
+                "description": "Her şeyin başladığı yer. Bilgisayara olan ilgim burada şekillendi.",
+                "bullets": []
+            }
+        ]
+    },
+    "contact": {
+        "title": "İletişime Geç",
+        "subtitle": "Merhaba de, ısırmam.",
+        "namePlaceholder": "Adınız",
+        "emailPlaceholder": "E-posta adresiniz",
+        "messagePlaceholder": "Mesajınız...",
+        "send": "Mesaj Gönder",
+        "sending": "Gönderiliyor...",
+        "sent": "Mesaj Gönderildi!",
+        "socials": "Ya da buradan bulun"
+    },
+    "footer": {
+        "copy": "© 2026 Emir Cem Ateş. Özenle yapıldı."
+    }
+}
