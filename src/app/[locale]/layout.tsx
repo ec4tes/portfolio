@@ -117,6 +117,7 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} className={`${inter.variable} ${jetbrainsMono.variable}`}>
             <head>
+                <meta name="google-site-verification" content="7ZvO4YEP-W3JuvGuSWeVnlIQkl3tkFzLWElmxwF_Zpg" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
