@@ -40,6 +40,11 @@ export default function KineticHeadline({ line1, line2 }: KineticHeadlineProps) 
     const prefersReduced = useReducedMotion();
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
     const [hasInteracted, setHasInteracted] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window);
+    }, []);
 
     const handleMouseMove = useCallback(
         (e: React.MouseEvent) => {
@@ -56,11 +61,11 @@ export default function KineticHeadline({ line1, line2 }: KineticHeadlineProps) 
     );
 
     const handleClick = useCallback(() => {
-        if (prefersReduced || isExploded) return;
+        if (prefersReduced || isExploded || isMobile) return;
         setIsExploded(true);
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => setIsExploded(false), 1000);
-    }, [prefersReduced, isExploded]);
+        timeoutRef.current = setTimeout(() => setIsExploded(false), 800);
+    }, [prefersReduced, isExploded, isMobile]);
 
     useEffect(() => {
         return () => {
@@ -165,10 +170,10 @@ function KineticLetter({
     const initialRotate = (seededRandom(letterIndex * 3) - 0.5) * 30;
     const hoverRotate = seededRandom(letterIndex * 7) > 0.5 ? 5 : -5;
     const explodeTarget = {
-        x: (seededRandom(letterIndex * 11) - 0.5) * 500,
-        y: (seededRandom(letterIndex * 13) - 0.5) * 350,
-        rotate: (seededRandom(letterIndex * 17) - 0.5) * 180,
-        scale: seededRandom(letterIndex * 19) * 0.3 + 0.4,
+        x: (seededRandom(letterIndex * 11) - 0.5) * 300,
+        y: (seededRandom(letterIndex * 13) - 0.5) * 200,
+        rotate: (seededRandom(letterIndex * 17) - 0.5) * 120,
+        scale: seededRandom(letterIndex * 19) * 0.3 + 0.5,
     };
 
     return (
@@ -209,7 +214,7 @@ function KineticLetter({
                         transition: { type: 'spring' as const, damping: 6, stiffness: 300 },
                     }
             }
-            className="inline-block text-[clamp(3.5rem,11vw,9rem)] font-black leading-[0.85] tracking-tighter transition-colors duration-150"
+            className="inline-block text-[clamp(2.5rem,10vw,9rem)] font-black leading-[0.85] tracking-tighter transition-colors duration-150"
             style={{
                 color: isHovered ? hoverColor : '#f0f0f0',
                 textShadow: isHovered

@@ -41,7 +41,7 @@ function Section({
     className?: string;
 }) {
     return (
-        <section id={id} className={`scroll-mt-24 py-24 px-6 ${className}`}>
+        <section id={id} className={`scroll-mt-24 py-16 sm:py-24 px-4 sm:px-6 ${className}`}>
             <div className="mx-auto max-w-5xl">{children}</div>
         </section>
     );
@@ -114,7 +114,7 @@ export default function HomePage() {
             <Navbar />
 
             {/* ── Hero ──────────────────────────────────── */}
-            <section className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 overflow-hidden">
                 {/* Animated background gradient blobs */}
                 <div className="pointer-events-none absolute inset-0">
                     <motion.div
@@ -123,7 +123,7 @@ export default function HomePage() {
                             y: [0, -20, 15, 0],
                         }}
                         transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute top-[15%] left-[10%] h-[600px] w-[600px] rounded-full bg-[var(--color-cyan)]/8 blur-[150px]"
+                        className="absolute top-[15%] left-[10%] h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[var(--color-cyan)]/8 blur-[100px] sm:blur-[150px]"
                     />
                     <motion.div
                         animate={{
@@ -131,7 +131,7 @@ export default function HomePage() {
                             y: [0, 25, -15, 0],
                         }}
                         transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute bottom-[10%] right-[10%] h-[500px] w-[500px] rounded-full bg-[var(--color-purple)]/8 blur-[150px]"
+                        className="absolute bottom-[10%] right-[10%] h-[250px] w-[250px] sm:h-[500px] sm:w-[500px] rounded-full bg-[var(--color-purple)]/8 blur-[100px] sm:blur-[150px]"
                     />
                     <motion.div
                         animate={{
@@ -158,7 +158,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}
-                        className="mb-20 flex justify-center"
+                        className="mb-10 sm:mb-20 flex justify-center"
                     >
                         <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-2 font-[family-name:var(--font-mono)] text-sm text-[var(--color-muted)]">
                             <span className="h-2 w-2 rounded-full bg-[#00e5a0] animate-pulse" />
@@ -181,7 +181,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.0, duration: 0.6 }}
-                        className="mt-14 flex justify-center"
+                        className="mt-8 sm:mt-14 flex justify-center"
                     >
                         <TypeChip labels={roles} />
                     </motion.div>
@@ -191,7 +191,7 @@ export default function HomePage() {
                         initial={{ scaleX: 0, opacity: 0 }}
                         animate={{ scaleX: 1, opacity: 1 }}
                         transition={{ delay: 1.4, duration: 0.8, ease: 'easeOut' }}
-                        className="mx-auto mt-10 h-[2px] w-64 origin-center animated-gradient-line"
+                        className="mx-auto mt-6 sm:mt-10 h-[2px] w-40 sm:w-64 origin-center animated-gradient-line"
                     />
 
                     {/* Scroll CTA */}

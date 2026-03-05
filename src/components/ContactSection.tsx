@@ -7,17 +7,40 @@ import MagneticLink from './MagneticLink';
 
 export default function ContactSection() {
     const t = useTranslations('contact');
-    const [formState, setFormState] = useState<'idle' | 'sending' | 'sent'>('idle');
+    const [formState, setFormState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setFormState('sending');
-        setTimeout(() => setFormState('sent'), 1500);
-        setTimeout(() => setFormState('idle'), 4000);
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        formData.append('access_key', '8f5a8f51-3476-4a87-950a-18110013968b');
+        formData.append('subject', 'ecatessoft.com — Yeni mesaj!');
+        formData.append('from_name', 'Portfolio Contact Form');
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (res.ok) {
+                setFormState('sent');
+                form.reset();
+                setTimeout(() => setFormState('idle'), 4000);
+            } else {
+                setFormState('error');
+                setTimeout(() => setFormState('idle'), 4000);
+            }
+        } catch {
+            setFormState('error');
+            setTimeout(() => setFormState('idle'), 4000);
+        }
     };
 
     return (
-        <section id="contact" className="py-24 px-6">
+        <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6">
             <div className="mx-auto max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -26,8 +49,8 @@ export default function ContactSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-black gradient-text">{t('title')}</h2>
-                    <p className="mt-3 text-lg text-[var(--color-muted)]">{t('subtitle')}</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black gradient-text">{t('title')}</h2>
+                    <p className="mt-3 text-base sm:text-lg text-[var(--color-muted)]">{t('subtitle')}</p>
                 </motion.div>
 
                 <motion.form
@@ -41,18 +64,21 @@ export default function ContactSection() {
                     <div className="grid gap-4 md:grid-cols-2">
                         <input
                             type="text"
+                            name="name"
                             placeholder={t('namePlaceholder')}
                             required
                             className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-cyan)]/50 focus:shadow-[0_0_20px_rgba(0,209,255,0.1)]"
                         />
                         <input
                             type="email"
+                            name="email"
                             placeholder={t('emailPlaceholder')}
                             required
                             className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-cyan)]/50 focus:shadow-[0_0_20px_rgba(0,209,255,0.1)]"
                         />
                     </div>
                     <textarea
+                        name="message"
                         placeholder={t('messagePlaceholder')}
                         required
                         rows={5}
@@ -69,6 +95,7 @@ export default function ContactSection() {
                         {formState === 'idle' && t('send')}
                         {formState === 'sending' && t('sending')}
                         {formState === 'sent' && t('sent')}
+                        {formState === 'error' && '❌ Hata!'}
                     </motion.button>
                 </motion.form>
 
@@ -81,7 +108,7 @@ export default function ContactSection() {
                     className="mt-12 text-center"
                 >
                     <p className="mb-4 text-sm text-[var(--color-muted)]">{t('socials')}</p>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-3">
                         {[
                             { label: 'GitHub', href: 'https://github.com/ec4tes', icon: '⌘' },
                             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/emircemates/', icon: '↗' },
@@ -91,7 +118,7 @@ export default function ContactSection() {
                             <MagneticLink
                                 key={s.label}
                                 href={s.href}
-                                className="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-2.5 text-sm transition-all hover:border-[var(--color-cyan)]/40 hover:shadow-[0_0_20px_rgba(0,209,255,0.12)] hover:text-[var(--color-cyan)]"
+                                className="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm transition-all hover:border-[var(--color-cyan)]/40 hover:shadow-[0_0_20px_rgba(0,209,255,0.12)] hover:text-[var(--color-cyan)]"
                             >
                                 <span>{s.icon}</span>
                                 {s.label}
