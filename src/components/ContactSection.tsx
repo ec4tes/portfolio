@@ -15,25 +15,40 @@ export default function ContactSection() {
 
         const form = e.currentTarget;
         const formData = new FormData(form);
-        formData.append('access_key', '8f5a8f51-3476-4a87-950a-18110013968b');
-        formData.append('subject', 'ecatessoft.com — Yeni mesaj!');
-        formData.append('from_name', 'Portfolio Contact Form');
+
+        const payload = {
+            access_key: '8f5a8f51-3476-4a87-950a-18110013968b',
+            name: formData.get('name') as string,
+            email: formData.get('email') as string,
+            message: formData.get('message') as string,
+            subject: 'ecatessoft.com — Yeni mesaj!',
+            from_name: 'Portfolio Contact Form',
+            replyto: formData.get('email') as string,
+        };
 
         try {
             const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(payload),
             });
 
-            if (res.ok) {
+            const data = await res.json();
+
+            if (data.success) {
                 setFormState('sent');
                 form.reset();
                 setTimeout(() => setFormState('idle'), 4000);
             } else {
+                console.error('Web3Forms error:', data);
                 setFormState('error');
                 setTimeout(() => setFormState('idle'), 4000);
             }
-        } catch {
+        } catch (err) {
+            console.error('Form submit error:', err);
             setFormState('error');
             setTimeout(() => setFormState('idle'), 4000);
         }
