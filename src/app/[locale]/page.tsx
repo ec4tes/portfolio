@@ -166,14 +166,29 @@ export default function HomePage() {
                         </span>
                     </motion.div>
 
-                    {/* Kinetic headline — centered */}
+                    {/* Kinetic headline — desktop only */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="flex flex-col items-center"
+                        className="hidden md:flex flex-col items-center"
                     >
                         <KineticHeadline line1="EMİR CEM" line2="ATEŞ" />
+                    </motion.div>
+
+                    {/* Static headline — mobile only */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                        className="md:hidden flex flex-col items-center"
+                    >
+                        <h1 className="text-5xl sm:text-6xl font-black leading-[0.9] tracking-tighter text-[#f0f0f0]">
+                            EMİR CEM
+                        </h1>
+                        <h1 className="text-5xl sm:text-6xl font-black leading-[0.9] tracking-tighter text-[#f0f0f0]">
+                            ATEŞ
+                        </h1>
                     </motion.div>
 
                     {/* Type chip */}
