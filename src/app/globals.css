@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #08090a;
-  --color-fg: #f0f0f0;
-  --color-muted: #888;
-  --color-accent: #e8716d;
-  --color-accent-soft: #c9605d;
-  --color-purple: #9f7aea;
-  --color-pink: #ff6b9d;
+  --color-bg: #09090b;
+  --color-fg: #e4e4e7;
+  --color-muted: #71717a;
+  --color-accent: #34d399;
+  --color-accent-soft: #10b981;
+  --color-purple: #2dd4bf;
+  --color-pink: #94a3b8;
   --color-orange: #ff9f43;
   --color-card: rgba(255, 255, 255, 0.04);
   --color-border: rgba(255, 255, 255, 0.08);
@@ -54,7 +54,7 @@ body::before {
 }
 
 ::selection {
-  background-color: rgba(232, 113, 109, 0.3);
+  background-color: rgba(52, 211, 153, 0.25);
   color: white;
 }
 
@@ -83,11 +83,11 @@ body::before {
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(232, 113, 109, 0.4), 0 0 40px rgba(232, 113, 109, 0.15);
+  text-shadow: 0 0 20px rgba(52, 211, 153, 0.4), 0 0 40px rgba(52, 211, 153, 0.15);
 }
 
 .glow-box {
-  box-shadow: 0 0 20px rgba(232, 113, 109, 0.12), 0 0 60px rgba(232, 113, 109, 0.04);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.12), 0 0 60px rgba(52, 211, 153, 0.04);
 }
 
 /* ── Animated gradient line ───────────────────────── */
@@ -100,15 +100,15 @@ body::before {
 
 .animated-gradient-line {
   background: linear-gradient(90deg, 
-    #e8716d 0%, 
-    #c9605d 25%, 
-    #9f7aea 50%, 
-    #e8716d 75%, 
-    #c9605d 100%
+    #34d399 0%, 
+    #10b981 25%, 
+    #2dd4bf 50%, 
+    #34d399 75%, 
+    #10b981 100%
   );
   background-size: 200% 100%;
   animation: gradient-shift 6s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(232, 113, 109, 0.3), 0 0 20px rgba(159, 122, 234, 0.15);
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.3), 0 0 20px rgba(45, 212, 191, 0.15);
   border-radius: 9999px;
 }
 
@@ -189,4 +189,11 @@ body::before {
   animation: sb-crackle-flash 8s linear infinite;
 }
 
+@keyframes terminal-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
 
+.animate-terminal-cursor {
+  animation: terminal-blink 1s step-end infinite;
+}

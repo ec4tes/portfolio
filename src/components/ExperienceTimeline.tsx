@@ -34,7 +34,7 @@ export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
                         <div className="absolute left-[11px] top-2 h-3 w-3 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)]" />
 
                         {/* Card */}
-                        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 transition-all hover:border-[var(--color-accent)]/20 hover:shadow-[0_0_30px_rgba(232,113,109,0.06)]">
+                        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 transition-all hover:border-[var(--color-accent)]/20 hover:shadow-[0_0_30px_rgba(52,211,153,0.06)]">
                             {/* Track header */}
                             <div className="flex items-center justify-between gap-4 flex-wrap">
                                 <div>

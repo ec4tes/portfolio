@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,6 +12,19 @@ export default function Navbar() {
     const router = useRouter();
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [displayText, setDisplayText] = useState('');
+    const fullText = '> ecates';
+
+    useEffect(() => {
+        let i = 0;
+        const timer = setInterval(() => {
+            setDisplayText(fullText.slice(0, i + 1));
+            i++;
+            if (i >= fullText.length) clearInterval(timer);
+        }, 120);
+        return () => clearInterval(timer);
+    }, []);
+
 
     const currentLocale = pathname.startsWith('/tr') ? 'tr' : 'en';
 
@@ -44,10 +57,11 @@ export default function Navbar() {
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
                 {/* Logo */}
                 <button
-                    className="text-base sm:text-lg font-bold tracking-tight hover:text-[var(--color-accent)] transition-colors"
+                    className="flex items-center text-base sm:text-lg font-bold tracking-tight hover:text-[var(--color-accent)] transition-colors group"
                     onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileOpen(false); }}
                 >
-                    <span className="gradient-text font-black">&gt; ecates</span>
+                    <span className="gradient-text font-black">{displayText}</span>
+                    <span className="w-[2px] h-[1em] bg-[var(--color-accent)] animate-terminal-cursor ml-1" />
                 </button>
 
                 {/* Nav links (hidden on small screens) */}
@@ -69,7 +83,7 @@ export default function Navbar() {
                     {/* Language toggle */}
                     <button
                         onClick={toggleLocale}
-                        className="flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 text-xs font-medium transition-all hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_15px_rgba(232,113,109,0.12)]"
+                        className="flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 text-xs font-medium transition-all hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_15px_rgba(52,211,153,0.12)]"
                     >
                         <span className={currentLocale === 'en' ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}>
                             EN

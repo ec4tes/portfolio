@@ -38,7 +38,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
                 >
                     <div
                         onClick={() => toggle(i)}
-                        className="group cursor-pointer rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:border-[var(--color-accent)]/25 hover:shadow-[0_0_30px_rgba(232,113,109,0.06)]"
+                        className="group cursor-pointer rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:border-[var(--color-accent)]/25 hover:shadow-[0_0_30px_rgba(52,211,153,0.06)]"
                     >
                         {/* Header */}
                         <div className="flex items-start justify-between gap-4">

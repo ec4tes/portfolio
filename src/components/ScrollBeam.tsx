@@ -137,7 +137,7 @@ export default function ScrollBeam() {
                         height: '100%',
                         scaleY: smoothProgress,
                         background:
-                            'linear-gradient(180deg, rgba(232,113,109,0.1) 0%, rgba(232,113,109,0.7) 15%, rgba(232,113,109,0.9) 50%, rgba(200,100,160,0.7) 80%, rgba(159,122,234,0.5) 100%)',
+                            'linear-gradient(180deg, rgba(52,211,153,0.1) 0%, rgba(52,211,153,0.7) 15%, rgba(52,211,153,0.9) 50%, rgba(200,100,160,0.7) 80%, rgba(45,212,191,0.5) 100%)',
                     }}
                 />
 
@@ -148,7 +148,7 @@ export default function ScrollBeam() {
                         height: '100%',
                         scaleY: smoothProgress,
                         background:
-                            'linear-gradient(180deg, transparent 0%, rgba(232,113,109,0.3) 15%, rgba(232,113,109,0.5) 50%, rgba(159,122,234,0.3) 100%)',
+                            'linear-gradient(180deg, transparent 0%, rgba(52,211,153,0.3) 15%, rgba(52,211,153,0.5) 50%, rgba(45,212,191,0.3) 100%)',
                         filter: 'blur(3px)',
                     }}
                 />
@@ -160,7 +160,7 @@ export default function ScrollBeam() {
                         height: '100%',
                         scaleY: smoothProgress,
                         background:
-                            'linear-gradient(180deg, transparent 0%, rgba(232,113,109,0.12) 20%, rgba(232,113,109,0.2) 50%, rgba(159,122,234,0.1) 100%)',
+                            'linear-gradient(180deg, transparent 0%, rgba(52,211,153,0.12) 20%, rgba(52,211,153,0.2) 50%, rgba(45,212,191,0.1) 100%)',
                         filter: 'blur(6px)',
                     }}
                 />
@@ -172,7 +172,7 @@ export default function ScrollBeam() {
                         height: '100%',
                         scaleY: smoothProgress,
                         background:
-                            'linear-gradient(180deg, transparent 0%, rgba(232,113,109,0.05) 20%, rgba(232,113,109,0.08) 50%, rgba(159,122,234,0.04) 100%)',
+                            'linear-gradient(180deg, transparent 0%, rgba(52,211,153,0.05) 20%, rgba(52,211,153,0.08) 50%, rgba(45,212,191,0.04) 100%)',
                         filter: 'blur(10px)',
                     }}
                 />
@@ -189,7 +189,7 @@ export default function ScrollBeam() {
                         style={{
                             height: '60px',
                             background:
-                                'linear-gradient(180deg, transparent, rgba(255,255,255,0.5), rgba(232,113,109,0.4), transparent)',
+                                'linear-gradient(180deg, transparent, rgba(255,255,255,0.5), rgba(52,211,153,0.4), transparent)',
                             filter: 'blur(1px)',
                         }}
                     />
@@ -207,7 +207,7 @@ export default function ScrollBeam() {
                             left: '24px',
                             width: `${c.length}px`,
                             height: '1px',
-                            background: `linear-gradient(${c.angle > 0 ? '90deg' : '270deg'}, rgba(232,113,109,0.7), transparent)`,
+                            background: `linear-gradient(${c.angle > 0 ? '90deg' : '270deg'}, rgba(52,211,153,0.7), transparent)`,
                             transformOrigin: c.angle > 0 ? 'left center' : 'right center',
                             transform: `rotate(${c.angle}deg)`,
                             animationDelay: c.delay,
@@ -245,7 +245,7 @@ export default function ScrollBeam() {
                                 className="absolute left-5 h-px origin-left"
                                 style={{
                                     width: '35px',
-                                    background: `linear-gradient(90deg, rgba(232,113,109,${isCurrent ? 0.5 : 0.15}), transparent)`,
+                                    background: `linear-gradient(90deg, rgba(52,211,153,${isCurrent ? 0.5 : 0.15}), transparent)`,
                                 }}
                             />
 
@@ -260,7 +260,7 @@ export default function ScrollBeam() {
                                         className="absolute font-[family-name:var(--font-mono)] text-[9px] tracking-widest"
                                         style={{
                                             left: '28px',
-                                            color: isCurrent ? '#e8716d' : 'rgba(255,255,255,0.3)',
+                                            color: isCurrent ? '#34d399' : 'rgba(255,255,255,0.3)',
                                         }}
                                     >
                                         {SECTION_LABELS[i]}
@@ -279,8 +279,8 @@ export default function ScrollBeam() {
                                         transition={{ duration: 1, ease: 'easeOut' }}
                                         className="absolute h-4 w-4 rounded-full"
                                         style={{
-                                            border: '1px solid rgba(232,113,109,0.5)',
-                                            boxShadow: '0 0 8px rgba(232,113,109,0.3)',
+                                            border: '1px solid rgba(52,211,153,0.5)',
+                                            boxShadow: '0 0 8px rgba(52,211,153,0.3)',
                                         }}
                                     />
                                 )}
@@ -315,15 +315,15 @@ export default function ScrollBeam() {
                                         borderWidth: '1.5px',
                                         borderStyle: 'solid',
                                         borderColor: isActive
-                                            ? '#e8716d'
+                                            ? '#34d399'
                                             : 'rgba(255,255,255,0.05)',
                                         backgroundColor: isActive
-                                            ? '#e8716d'
+                                            ? '#34d399'
                                             : 'transparent',
                                         boxShadow: isCurrent
-                                            ? '0 0 12px rgba(232,113,109,0.7), 0 0 30px rgba(232,113,109,0.3), 0 0 60px rgba(232,113,109,0.12)'
+                                            ? '0 0 12px rgba(52,211,153,0.7), 0 0 30px rgba(52,211,153,0.3), 0 0 60px rgba(52,211,153,0.12)'
                                             : isActive
-                                            ? '0 0 8px rgba(232,113,109,0.4), 0 0 20px rgba(232,113,109,0.15)'
+                                            ? '0 0 8px rgba(52,211,153,0.4), 0 0 20px rgba(52,211,153,0.15)'
                                             : 'none',
                                     }}
                                 />
@@ -359,7 +359,7 @@ export default function ScrollBeam() {
                         className="absolute -inset-6 rounded-full sb-breathe"
                         style={{
                             background:
-                                'radial-gradient(circle, rgba(232,113,109,0.35) 0%, rgba(232,113,109,0.08) 40%, transparent 70%)',
+                                'radial-gradient(circle, rgba(52,211,153,0.35) 0%, rgba(52,211,153,0.08) 40%, transparent 70%)',
                         }}
                     />
 
@@ -367,12 +367,12 @@ export default function ScrollBeam() {
                     <div
                         className="relative h-[16px] w-[16px] rounded-full"
                         style={{
-                            backgroundColor: '#e8716d',
+                            backgroundColor: '#34d399',
                             boxShadow:
-                                '0 0 8px rgba(232,113,109,0.9), ' +
-                                '0 0 20px rgba(232,113,109,0.5), ' +
-                                '0 0 45px rgba(232,113,109,0.25), ' +
-                                '0 0 80px rgba(232,113,109,0.1)',
+                                '0 0 8px rgba(52,211,153,0.9), ' +
+                                '0 0 20px rgba(52,211,153,0.5), ' +
+                                '0 0 45px rgba(52,211,153,0.25), ' +
+                                '0 0 80px rgba(52,211,153,0.1)',
                         }}
                     >
                         {/* White hot center */}
@@ -391,7 +391,7 @@ export default function ScrollBeam() {
                             {
                                 width: p.size,
                                 height: p.size,
-                                backgroundColor: `rgba(232,113,109,${p.opacity})`,
+                                backgroundColor: `rgba(52,211,153,${p.opacity})`,
                                 top: p.top,
                                 left: '24px',
                                 animationDelay: p.delay,

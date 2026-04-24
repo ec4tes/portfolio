@@ -145,7 +145,7 @@ export default function HomePage() {
                             y: [0, 15, -20, 0],
                         }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute bottom-[30%] left-[30%] h-[250px] w-[250px] rounded-full bg-[#fbbf24]/4 blur-[100px]"
+                        className="absolute bottom-[30%] left-[30%] h-[250px] w-[250px] rounded-full bg-[#059669]/4 blur-[100px]"
                     />
                 </div>
 
@@ -257,8 +257,8 @@ export default function HomePage() {
                 <div className="grid gap-8 md:grid-cols-2">
                     {(Object.keys(skills) as (keyof typeof skills)[]).map((cat, catIdx) => {
                         const accents = [
-                            { color: '#e8716d', bgFrom: '#e8716d' },
-                            { color: '#9f7aea', bgFrom: '#9f7aea' },
+                            { color: '#34d399', bgFrom: '#34d399' },
+                            { color: '#2dd4bf', bgFrom: '#2dd4bf' },
                         ];
                         const accent = accents[catIdx % accents.length];
 

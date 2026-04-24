@@ -3,19 +3,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-/* ── Warm, organic color palette ─────────────────── */
+/* ── Forge: masculine emerald/teal palette ────────── */
 const LETTER_COLORS = [
-    '#e8716d', // coral (main accent)
-    '#d4564a', // deep coral
-    '#f97171', // warm red
-    '#9f7aea', // soft purple
-    '#fb7185', // rose
-    '#c084fc', // lavender
-    '#f0abfc', // soft pink
-    '#e07a5f', // terracotta
-    '#ff6b9d', // pink
-    '#c9605d', // muted coral
-    '#b97cf6', // orchid
+    '#34d399', // emerald-400 (main accent)
+    '#10b981', // emerald-500
+    '#2dd4bf', // teal-400
+    '#6ee7b7', // emerald-300
+    '#14b8a6', // teal-500
+    '#4ade80', // green-400
+    '#0d9488', // teal-600
+    '#22c55e', // green-500
+    '#5eead4', // teal-300
+    '#059669', // emerald-600
+    '#a7f3d0', // emerald-200
 ];
 
 function getLetterColor(globalIndex: number): string {
