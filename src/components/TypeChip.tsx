@@ -19,7 +19,7 @@ export default function TypeChip({ labels }: TypeChipProps) {
 
     return (
         <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 sm:px-4 sm:py-2 font-[family-name:var(--font-mono)] text-xs sm:text-sm">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-cyan)] animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
             <div className="relative h-5 overflow-hidden min-w-[180px] sm:min-w-[220px]">
                 <AnimatePresence mode="wait">
                     <motion.span

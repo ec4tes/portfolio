@@ -3,19 +3,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-/* ── Masculine, cool color palette ───────────────── */
+/* ── Warm, organic color palette ─────────────────── */
 const LETTER_COLORS = [
-    '#00d1ff', // cyan
-    '#3b82f6', // blue
-    '#6366f1', // indigo
-    '#8b5cf6', // violet
-    '#06b6d4', // darker cyan
-    '#0ea5e9', // sky blue
-    '#a78bfa', // soft purple
-    '#2dd4bf', // teal
-    '#38bdf8', // light blue
-    '#7c3aed', // deep purple
-    '#14b8a6', // teal-green
+    '#e8716d', // coral (main accent)
+    '#d4564a', // deep coral
+    '#f97171', // warm red
+    '#9f7aea', // soft purple
+    '#fb7185', // rose
+    '#c084fc', // lavender
+    '#f0abfc', // soft pink
+    '#e07a5f', // terracotta
+    '#ff6b9d', // pink
+    '#c9605d', // muted coral
+    '#b97cf6', // orchid
 ];
 
 function getLetterColor(globalIndex: number): string {

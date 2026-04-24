@@ -64,7 +64,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black gradient-text">{t('title')}</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black gradient-text leading-normal pb-1">{t('title')}</h2>
                     <p className="mt-3 text-base sm:text-lg text-[var(--color-muted)]">{t('subtitle')}</p>
                 </motion.div>
 
@@ -82,14 +82,14 @@ export default function ContactSection() {
                             name="name"
                             placeholder={t('namePlaceholder')}
                             required
-                            className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-cyan)]/50 focus:shadow-[0_0_20px_rgba(0,209,255,0.1)]"
+                            className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-accent)]/50 focus:shadow-[0_0_20px_rgba(232,113,109,0.08)]"
                         />
                         <input
                             type="email"
                             name="email"
                             placeholder={t('emailPlaceholder')}
                             required
-                            className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-cyan)]/50 focus:shadow-[0_0_20px_rgba(0,209,255,0.1)]"
+                            className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-accent)]/50 focus:shadow-[0_0_20px_rgba(232,113,109,0.08)]"
                         />
                     </div>
                     <textarea
@@ -97,7 +97,7 @@ export default function ContactSection() {
                         placeholder={t('messagePlaceholder')}
                         required
                         rows={5}
-                        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-cyan)]/50 focus:shadow-[0_0_20px_rgba(0,209,255,0.1)] resize-none"
+                        className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)]/60 outline-none transition-all focus:border-[var(--color-accent)]/50 focus:shadow-[0_0_20px_rgba(232,113,109,0.08)] resize-none"
                     />
 
                     <motion.button
@@ -105,7 +105,7 @@ export default function ContactSection() {
                         disabled={formState !== 'idle'}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full md:w-auto rounded-full bg-gradient-to-r from-[var(--color-cyan)] to-[var(--color-purple)] px-8 py-3 text-sm font-bold text-[var(--color-bg)] transition-all hover:shadow-[0_0_30px_rgba(0,209,255,0.3)] disabled:opacity-50"
+                        className="w-full md:w-auto rounded-full bg-[var(--color-accent)] px-8 py-3 text-sm font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(232,113,109,0.25)] disabled:opacity-50"
                     >
                         {formState === 'idle' && t('send')}
                         {formState === 'sending' && t('sending')}
@@ -133,7 +133,7 @@ export default function ContactSection() {
                             <MagneticLink
                                 key={s.label}
                                 href={s.href}
-                                className="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm transition-all hover:border-[var(--color-cyan)]/40 hover:shadow-[0_0_20px_rgba(0,209,255,0.12)] hover:text-[var(--color-cyan)]"
+                                className="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm transition-all hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_20px_rgba(232,113,109,0.1)] hover:text-[var(--color-accent)]"
                             >
                                 <span>{s.icon}</span>
                                 {s.label}

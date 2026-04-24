@@ -32,7 +32,7 @@ export default function CursorSpotlight() {
         <motion.div
             className="pointer-events-none fixed inset-0 z-[9998]"
             style={{
-                background: `radial-gradient(600px circle at var(--cx) var(--cy), rgba(0,209,255,0.06), transparent 60%)`,
+                background: `radial-gradient(600px circle at var(--cx) var(--cy), rgba(232,113,109,0.05), transparent 60%)`,
             }}
         >
             <motion.div
@@ -43,7 +43,7 @@ export default function CursorSpotlight() {
                     translateX: '-50%',
                     translateY: '-50%',
                     background:
-                        'radial-gradient(circle, rgba(0,209,255,0.07) 0%, rgba(168,85,247,0.03) 40%, transparent 70%)',
+                        'radial-gradient(circle, rgba(232,113,109,0.06) 0%, rgba(159,122,234,0.025) 40%, transparent 70%)',
                 }}
             />
         </motion.div>

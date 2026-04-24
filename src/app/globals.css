@@ -4,8 +4,9 @@
   --color-bg: #08090a;
   --color-fg: #f0f0f0;
   --color-muted: #888;
-  --color-cyan: #00d1ff;
-  --color-purple: #a855f7;
+  --color-accent: #e8716d;
+  --color-accent-soft: #c9605d;
+  --color-purple: #9f7aea;
   --color-pink: #ff6b9d;
   --color-orange: #ff9f43;
   --color-card: rgba(255, 255, 255, 0.04);
@@ -53,7 +54,7 @@ body::before {
 }
 
 ::selection {
-  background-color: rgba(0, 209, 255, 0.3);
+  background-color: rgba(232, 113, 109, 0.3);
   color: white;
 }
 
@@ -75,18 +76,18 @@ body::before {
 /* ── Utility classes ──────────────────────────────── */
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 100%);
+  background: linear-gradient(135deg, var(--color-fg) 0%, var(--color-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(0, 209, 255, 0.5), 0 0 40px rgba(0, 209, 255, 0.2);
+  text-shadow: 0 0 20px rgba(232, 113, 109, 0.4), 0 0 40px rgba(232, 113, 109, 0.15);
 }
 
 .glow-box {
-  box-shadow: 0 0 20px rgba(0, 209, 255, 0.15), 0 0 60px rgba(0, 209, 255, 0.05);
+  box-shadow: 0 0 20px rgba(232, 113, 109, 0.12), 0 0 60px rgba(232, 113, 109, 0.04);
 }
 
 /* ── Animated gradient line ───────────────────────── */
@@ -99,14 +100,93 @@ body::before {
 
 .animated-gradient-line {
   background: linear-gradient(90deg, 
-    #00d1ff 0%, 
-    #6366f1 25%, 
-    #a855f7 50%, 
-    #ff6b9d 75%, 
-    #6366f1 100%
+    #e8716d 0%, 
+    #c9605d 25%, 
+    #9f7aea 50%, 
+    #e8716d 75%, 
+    #c9605d 100%
   );
   background-size: 200% 100%;
   animation: gradient-shift 6s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(0, 209, 255, 0.4), 0 0 20px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 8px rgba(232, 113, 109, 0.3), 0 0 20px rgba(159, 122, 234, 0.15);
   border-radius: 9999px;
 }
+
+/* ── ScrollBeam animations ───────────────────────── */
+
+/* Sonar outward ring - slow */
+@keyframes sb-sonar-expand {
+  0% { transform: scale(0.5); opacity: 0.7; }
+  40% { opacity: 0.2; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Sonar outward ring - faster, offset */
+@keyframes sb-sonar-expand-alt {
+  0% { transform: scale(0.7); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Orb breathing glow */
+@keyframes sb-breathe-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 0.2; }
+}
+
+/* Particles floating upward with drift */
+@keyframes sb-particle-float {
+  0% {
+    transform: translate(-50%, 0) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  60% { opacity: 0.4; }
+  100% {
+    transform: translate(-50%, -60px) translateX(var(--sb-drift, 0px));
+    opacity: 0;
+  }
+}
+
+/* Energy shimmer traveling down the beam */
+@keyframes sb-shimmer-travel {
+  0% { top: -60px; opacity: 0; }
+  5% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Lightning crackle flash */
+@keyframes sb-crackle-flash {
+  0%, 92%, 100% { opacity: 0; transform-origin: left center; }
+  94% { opacity: 0.9; }
+  96% { opacity: 0.3; }
+  98% { opacity: 0.7; }
+}
+
+.sb-sonar {
+  animation: sb-sonar-expand 3.5s ease-out infinite;
+}
+
+.sb-sonar-alt {
+  animation: sb-sonar-expand-alt 2.5s ease-out infinite;
+  animation-delay: 1s;
+}
+
+.sb-breathe {
+  animation: sb-breathe-pulse 4s ease-in-out infinite;
+}
+
+.sb-particle {
+  animation: sb-particle-float 4s ease-in-out infinite;
+}
+
+.sb-shimmer {
+  animation: sb-shimmer-travel 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.sb-crackle {
+  animation: sb-crackle-flash 8s linear infinite;
+}
+
+

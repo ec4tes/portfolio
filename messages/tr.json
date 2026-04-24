@@ -37,15 +37,11 @@
             "react": "useEffect dependency array'i hala bazen kabus gösteriyor.",
             "nextjs": "Her yeni versiyon = tüm projeyi yeniden öğren.",
             "typescript": "'any' yasak ama bazen... neyse.",
-            "tailwind": "className='flex justify-center items-center' ezbere biliyorum.",
-            "framer": "Bu siteyi yapan şey. Abartıldı mı biraz? Evet.",
-            "reactnative": "'Bir kere yaz her yerde çalışsın' dediler. Yalanmış."
+            "tailwind": "className='flex justify-center items-center' ezbere biliyorum."
         },
         "backendSkills": {
-            "nodejs": "callback hell'den async/await cennetine terfi ettim.",
             "python": "indent hatası yüzünden 2 saat harcadığımı itiraf ediyorum.",
             "postgresql": "JOIN yazarken kendimi hacker gibi hissediyorum.",
-            "mongodb": "Schema yok diye sevindim, sonra pişman oldum.",
             "java": "AbstractSingletonProxyFactoryBean... alıştım artık.",
             "springboot": "Annotation yığınıyla kod yazma sanatı."
         }
@@ -120,7 +116,7 @@
     },
     "contact": {
         "title": "İletişime Geç",
-        "subtitle": "Merhaba de, ısırmam.",
+        "subtitle": "Bir fikrin mi var? Konuşalım.",
         "namePlaceholder": "Adınız",
         "emailPlaceholder": "E-posta adresiniz",
         "messagePlaceholder": "Mesajınız...",

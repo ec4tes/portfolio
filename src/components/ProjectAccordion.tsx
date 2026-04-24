@@ -38,7 +38,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
                 >
                     <div
                         onClick={() => toggle(i)}
-                        className="group cursor-pointer rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:border-[var(--color-cyan)]/30 hover:shadow-[0_0_30px_rgba(0,209,255,0.08)]"
+                        className="group cursor-pointer rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:border-[var(--color-accent)]/25 hover:shadow-[0_0_30px_rgba(232,113,109,0.06)]"
                     >
                         {/* Header */}
                         <div className="flex items-start justify-between gap-4">
@@ -49,7 +49,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
                             <motion.span
                                 animate={{ rotate: openIndex === i ? 45 : 0 }}
                                 transition={{ duration: 0.2 }}
-                                className="mt-1 text-xl text-[var(--color-cyan)] shrink-0"
+                                className="mt-1 text-xl text-[var(--color-accent)] shrink-0"
                             >
                                 +
                             </motion.span>
@@ -57,7 +57,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
 
                         {/* Chips */}
                         <div className="mt-3 flex flex-wrap gap-2">
-                            <span className="rounded-full bg-[var(--color-cyan)]/10 px-3 py-1 text-xs text-[var(--color-cyan)]">
+                            <span className="rounded-full bg-[var(--color-accent)]/10 px-3 py-1 text-xs text-[var(--color-accent)]">
                                 {item.role}
                             </span>
                             <span className="rounded-full bg-[var(--color-purple)]/10 px-3 py-1 text-xs text-[var(--color-purple)]">
@@ -81,7 +81,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
                                     <ul className="mt-4 space-y-2 border-t border-[var(--color-border)] pt-4">
                                         {item.bullets.map((bullet, j) => (
                                             <li key={j} className="flex items-start gap-2 text-sm text-[var(--color-muted)]">
-                                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-cyan)]" />
+                                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-accent)]" />
                                                 {bullet}
                                             </li>
                                         ))}
@@ -90,7 +90,7 @@ export default function ProjectAccordion({ items }: ProjectAccordionProps) {
                                         <div className="mt-4">
                                             <MagneticLink
                                                 href={item.link}
-                                                className="text-sm text-[var(--color-cyan)] hover:underline"
+                                                className="text-sm text-[var(--color-accent)] hover:underline"
                                             >
                                                 {item.linkLabel} →
                                             </MagneticLink>

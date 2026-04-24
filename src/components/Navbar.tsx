@@ -44,7 +44,7 @@ export default function Navbar() {
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
                 {/* Logo */}
                 <button
-                    className="text-base sm:text-lg font-bold tracking-tight hover:text-[var(--color-cyan)] transition-colors"
+                    className="text-base sm:text-lg font-bold tracking-tight hover:text-[var(--color-accent)] transition-colors"
                     onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileOpen(false); }}
                 >
                     <span className="gradient-text font-black">&gt; ecates</span>
@@ -59,7 +59,7 @@ export default function Navbar() {
                             className="text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-fg)] relative group"
                         >
                             {t(section)}
-                            <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--color-cyan)] transition-all duration-300 group-hover:w-full" />
+                            <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--color-accent)] transition-all duration-300 group-hover:w-full" />
                         </button>
                     ))}
                 </div>
@@ -69,13 +69,13 @@ export default function Navbar() {
                     {/* Language toggle */}
                     <button
                         onClick={toggleLocale}
-                        className="flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 text-xs font-medium transition-all hover:border-[var(--color-cyan)]/40 hover:shadow-[0_0_15px_rgba(0,209,255,0.15)]"
+                        className="flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 text-xs font-medium transition-all hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_15px_rgba(232,113,109,0.12)]"
                     >
-                        <span className={currentLocale === 'en' ? 'text-[var(--color-cyan)]' : 'text-[var(--color-muted)]'}>
+                        <span className={currentLocale === 'en' ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}>
                             EN
                         </span>
                         <span className="text-[var(--color-border)]">/</span>
-                        <span className={currentLocale === 'tr' ? 'text-[var(--color-cyan)]' : 'text-[var(--color-muted)]'}>
+                        <span className={currentLocale === 'tr' ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'}>
                             TR
                         </span>
                     </button>

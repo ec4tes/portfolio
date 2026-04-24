@@ -37,15 +37,11 @@
       "react": "useEffect dependency arrays still give me nightmares.",
       "nextjs": "Every new version = relearn the entire project.",
       "typescript": "'any' is banned but sometimes... nevermind.",
-      "tailwind": "I know 'flex justify-center items-center' by heart.",
-      "framer": "The thing that made this site. Overkill? Maybe.",
-      "reactnative": "'Write once, run everywhere' they said. They lied."
+      "tailwind": "I know 'flex justify-center items-center' by heart."
     },
     "backendSkills": {
-      "nodejs": "Promoted from callback hell to async/await paradise.",
       "python": "I admit I've lost 2 hours to an indent error.",
       "postgresql": "Writing JOINs makes me feel like a hacker.",
-      "mongodb": "No schema sounded great... until it didn't.",
       "java": "AbstractSingletonProxyFactoryBean... I'm used to it now.",
       "springboot": "The art of coding through annotation stacking."
     }
@@ -120,7 +116,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Say hi, I don't byte.",
+    "subtitle": "Got a project in mind? Let's talk.",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "Your email",
     "messagePlaceholder": "Your message...",

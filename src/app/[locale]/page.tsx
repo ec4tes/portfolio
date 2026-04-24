@@ -9,24 +9,21 @@ import TypeChip from '@/components/TypeChip';
 import ProjectAccordion from '@/components/ProjectAccordion';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 import ContactSection from '@/components/ContactSection';
+import ScrollBeam from '@/components/ScrollBeam';
 
 /* ── Skill data (not translated — brand names) ──── */
 const skills = {
     frontend: [
-        { icon: '⚛️', label: 'React', level: 90, comment: 'frontendSkills.react' },
-        { icon: '▲', label: 'Next.js', level: 85, comment: 'frontendSkills.nextjs' },
-        { icon: '🔷', label: 'TypeScript', level: 88, comment: 'frontendSkills.typescript' },
-        { icon: '🎨', label: 'Tailwind CSS', level: 92, comment: 'frontendSkills.tailwind' },
-        { icon: '🌊', label: 'Framer Motion', level: 75, comment: 'frontendSkills.framer' },
-        { icon: '📱', label: 'React Native', level: 70, comment: 'frontendSkills.reactnative' },
+        { icon: '⚛️', label: 'React', comment: 'frontendSkills.react' },
+        { icon: '▲', label: 'Next.js', comment: 'frontendSkills.nextjs' },
+        { icon: '🔷', label: 'TypeScript', comment: 'frontendSkills.typescript' },
+        { icon: '🎨', label: 'Tailwind CSS', comment: 'frontendSkills.tailwind' },
     ],
     backend: [
-        { icon: '🟢', label: 'Node.js', level: 85, comment: 'backendSkills.nodejs' },
-        { icon: '🐍', label: 'Python', level: 72, comment: 'backendSkills.python' },
-        { icon: '🗄️', label: 'PostgreSQL', level: 78, comment: 'backendSkills.postgresql' },
-        { icon: '🍀', label: 'MongoDB', level: 75, comment: 'backendSkills.mongodb' },
-        { icon: '☕', label: 'Java', level: 70, comment: 'backendSkills.java' },
-        { icon: '🍀', label: 'Spring Boot', level: 65, comment: 'backendSkills.springboot' },
+        { icon: '🐍', label: 'Python', comment: 'backendSkills.python' },
+        { icon: '🗄️', label: 'PostgreSQL', comment: 'backendSkills.postgresql' },
+        { icon: '☕', label: 'Java', comment: 'backendSkills.java' },
+        { icon: '🍀', label: 'Spring Boot', comment: 'backendSkills.springboot' },
     ],
 };
 
@@ -111,6 +108,7 @@ export default function HomePage() {
     return (
         <>
             <CursorSpotlight />
+            <ScrollBeam />
             <Navbar />
 
             {/* ── Hero ──────────────────────────────────── */}
@@ -123,7 +121,7 @@ export default function HomePage() {
                             y: [0, -20, 15, 0],
                         }}
                         transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute top-[15%] left-[10%] h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[var(--color-cyan)]/8 blur-[100px] sm:blur-[150px]"
+                        className="absolute top-[15%] left-[10%] h-[300px] w-[300px] sm:h-[600px] sm:w-[600px] rounded-full bg-[var(--color-accent)]/6 blur-[100px] sm:blur-[150px]"
                     />
                     <motion.div
                         animate={{
@@ -131,7 +129,7 @@ export default function HomePage() {
                             y: [0, 25, -15, 0],
                         }}
                         transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute bottom-[10%] right-[10%] h-[250px] w-[250px] sm:h-[500px] sm:w-[500px] rounded-full bg-[var(--color-purple)]/8 blur-[100px] sm:blur-[150px]"
+                        className="absolute bottom-[10%] right-[10%] h-[250px] w-[250px] sm:h-[500px] sm:w-[500px] rounded-full bg-[var(--color-purple)]/6 blur-[100px] sm:blur-[150px]"
                     />
                     <motion.div
                         animate={{
@@ -139,7 +137,7 @@ export default function HomePage() {
                             y: [0, -10, 20, 0],
                         }}
                         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute top-[40%] right-[25%] h-[300px] w-[300px] rounded-full bg-[var(--color-pink)]/6 blur-[120px]"
+                        className="absolute top-[40%] right-[25%] h-[300px] w-[300px] rounded-full bg-[var(--color-pink)]/4 blur-[120px]"
                     />
                     <motion.div
                         animate={{
@@ -147,7 +145,7 @@ export default function HomePage() {
                             y: [0, 15, -20, 0],
                         }}
                         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-                        className="absolute bottom-[30%] left-[30%] h-[250px] w-[250px] rounded-full bg-[#fbbf24]/5 blur-[100px]"
+                        className="absolute bottom-[30%] left-[30%] h-[250px] w-[250px] rounded-full bg-[#fbbf24]/4 blur-[100px]"
                     />
                 </div>
 
@@ -237,7 +235,7 @@ export default function HomePage() {
                     </div>
                     <div className="space-y-4">
                         <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
-                            <span className="font-[family-name:var(--font-mono)] text-xs text-[var(--color-cyan)]">
+                            <span className="font-[family-name:var(--font-mono)] text-xs text-[var(--color-accent)]">
                                 {tAbout('locationLabel')}
                             </span>
                             <p className="mt-1 text-lg font-bold">{tAbout('location')}</p>
@@ -255,13 +253,15 @@ export default function HomePage() {
             {/* ── Stack ─────────────────────────────────── */}
             <Section id="stack">
                 <SectionHeading title={tStack('title')} subtitle={tStack('subtitle')} />
-                <div className="grid gap-6 md:grid-cols-2">
+
+                <div className="grid gap-8 md:grid-cols-2">
                     {(Object.keys(skills) as (keyof typeof skills)[]).map((cat, catIdx) => {
                         const accents = [
-                            { from: '#00d1ff', to: '#6366f1' },
-                            { from: '#8b5cf6', to: '#06b6d4' },
+                            { color: '#e8716d', bgFrom: '#e8716d' },
+                            { color: '#9f7aea', bgFrom: '#9f7aea' },
                         ];
-                        const grad = accents[catIdx % accents.length];
+                        const accent = accents[catIdx % accents.length];
+
                         return (
                             <motion.div
                                 key={cat}
@@ -269,60 +269,63 @@ export default function HomePage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: catIdx * 0.15 }}
-                                className="relative rounded-2xl overflow-hidden"
                             >
-                                {/* Gradient border glow */}
-                                <div
-                                    className="absolute inset-0 rounded-2xl opacity-40"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${grad.from}20, transparent 50%, ${grad.to}15)`,
-                                    }}
-                                />
-                                <div className="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)]/80 backdrop-blur-sm p-6">
-                                    {/* Category header */}
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <div
-                                            className="h-6 w-1 rounded-full"
-                                            style={{ background: `linear-gradient(180deg, ${grad.from}, ${grad.to})` }}
-                                        />
-                                        <h3
-                                            className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-widest font-bold"
-                                            style={{ color: grad.from }}
-                                        >
-                                            {tStack(`categories.${cat}`)}
-                                        </h3>
-                                    </div>
+                                {/* Category label */}
+                                <div className="flex items-center gap-3 mb-5">
+                                    <div
+                                        className="h-5 w-1 rounded-full"
+                                        style={{ backgroundColor: accent.color }}
+                                    />
+                                    <h3
+                                        className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-widest font-bold"
+                                        style={{ color: accent.color }}
+                                    >
+                                        {tStack(`categories.${cat}`)}
+                                    </h3>
+                                </div>
 
-                                    {/* Skills list with XP bars */}
-                                    <div className="space-y-4">
-                                        {skills[cat].map((s, i) => (
-                                            <motion.div
-                                                key={s.label}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.1 + i * 0.08 }}
-                                                whileHover={{
-                                                    x: 4,
-                                                    transition: { type: 'spring' as const, damping: 12, stiffness: 300 },
+                                {/* Skill chips */}
+                                <div className="flex flex-wrap gap-3">
+                                    {skills[cat].map((s, i) => (
+                                        <motion.div
+                                            key={s.label}
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.1 + i * 0.06 }}
+                                            whileHover={{
+                                                y: -3,
+                                                transition: { type: 'spring' as const, damping: 12, stiffness: 300 },
+                                            }}
+                                            className="group relative"
+                                        >
+                                            <div
+                                                className="flex items-center gap-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] px-4 py-3 cursor-default transition-all hover:border-opacity-30"
+                                                style={{
+                                                    ['--hover-border' as string]: accent.color,
                                                 }}
-                                                className="group cursor-default"
+                                                onMouseEnter={(e) => {
+                                                    (e.currentTarget as HTMLElement).style.borderColor = `${accent.color}40`;
+                                                    (e.currentTarget as HTMLElement).style.boxShadow = `0 0 20px ${accent.color}12`;
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    (e.currentTarget as HTMLElement).style.borderColor = '';
+                                                    (e.currentTarget as HTMLElement).style.boxShadow = '';
+                                                }}
                                             >
-                                                <div className="flex items-center justify-between mb-1">
-                                                    <div className="flex items-center gap-2.5">
-                                                        <span className="text-lg">{s.icon}</span>
-                                                        <span className="text-sm font-semibold text-[var(--color-fg)] group-hover:text-white transition-colors">
-                                                            {s.label}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                {/* Fun comment on hover */}
-                                                <p className="text-[11px] text-[var(--color-muted)] italic opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                                    {tStack(s.comment)}
-                                                </p>
-                                            </motion.div>
-                                        ))}
-                                    </div>
+                                                <span className="text-lg">{s.icon}</span>
+                                                <span className="text-sm font-semibold text-[var(--color-fg)] group-hover:text-white transition-colors">
+                                                    {s.label}
+                                                </span>
+                                            </div>
+
+                                            {/* Tooltip on hover */}
+                                            <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 rounded-lg bg-[#1a1b1e] border border-[var(--color-border)] text-[11px] text-[var(--color-muted)] italic whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                                                {tStack(s.comment)}
+                                                <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#1a1b1e]" />
+                                            </div>
+                                        </motion.div>
+                                    ))}
                                 </div>
                             </motion.div>
                         );
